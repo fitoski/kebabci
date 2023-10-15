@@ -7,6 +7,7 @@ public class KebabManager : MonoBehaviour
     public List<GameObject> kebabList = new List<GameObject>();
     public GameObject kebabPrefab;
     public Transform exitPoint;
+    public Transform waiterExitPoint;
     bool isWorking;
     int stackCount = 10;
     // Start is called before the first frame update

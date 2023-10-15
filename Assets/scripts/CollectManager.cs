@@ -7,33 +7,37 @@ public class CollectManager : MonoBehaviour
     public List<GameObject> kebabList = new List<GameObject>();
     public GameObject kebabPrefab;
     public Transform collectPoint;
+    [SerializeField] private float kebabSize = 5f;
 
     int kebabLimit = 10;
 
     private void OnEnable()
     {
-        TriggerManager.OnKebabCollect += GetKebab;
-        TriggerManager.OnKebabGive += GiveKebab;
+        TriggerManager.Instance.OnKebabCollect += GetKebab;
+        TriggerManager.Instance.OnKebabGive += GiveKebab;
 
     }
 
     private void OnDisable()
     {
-        TriggerManager.OnKebabCollect -= GetKebab;
-        TriggerManager.OnKebabGive -= GiveKebab;
+        TriggerManager.Instance.OnKebabCollect -= GetKebab;
+        TriggerManager.Instance.OnKebabGive -= GiveKebab;
 
     }
 
     void GetKebab()
     {
-        if(kebabList.Count<= kebabLimit)
+        if(kebabList.Count<= kebabLimit && TriggerManager.Instance.kebabManager.kebabList.Count > 0)
         {
             GameObject temp = Instantiate(kebabPrefab,collectPoint);
-            temp.transform.position = new Vector3(collectPoint.position.x, 0.5f+((float)kebabList.Count / 20), collectPoint.position.z);
+            temp.transform.parent = null;
+            temp.transform.localScale = new Vector3(1, 1, 1);
+            temp.transform.parent = collectPoint;
+            temp.transform.localPosition = new Vector3(collectPoint.position.x, collectPoint.position.y + (kebabList.Count * kebabSize), collectPoint.position.z);
             kebabList.Add(temp);
-            if(TriggerManager.kebabManager!=null)
+            if(TriggerManager.Instance.kebabManager!=null)
             {
-                TriggerManager.kebabManager.RemoveLast();
+                TriggerManager.Instance.kebabManager.RemoveLast();
             }
         }
     }
@@ -42,7 +46,7 @@ public class CollectManager : MonoBehaviour
     {
         if(kebabList.Count>0)
         {
-            TriggerManager.workerManager.GetKebab();
+            TriggerManager.Instance.workerManager.GetKebab();
             RemoveLast();
         }
     }
