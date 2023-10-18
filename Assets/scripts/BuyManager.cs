@@ -8,31 +8,23 @@ public class BuyManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TriggerManager[] triggerManagers = FindObjectsOfType<TriggerManager>();
-        foreach (TriggerManager triggerManager in triggerManagers)
-        {
-            triggerManager.OnMoneyCollected += IncreaseMoney;
-            triggerManager.OnBuyingDesk += BuyArea;
-        }
+        TriggerManager.OnMoneyCollected += IncreaseMoney;
+        TriggerManager.OnBuyingDesk += BuyArea;
     }
 
     private void OnDisable()
     {
-        TriggerManager[] triggerManagers = FindObjectsOfType<TriggerManager>();
-        foreach (TriggerManager triggerManager in triggerManagers)
-        {
-            triggerManager.OnMoneyCollected -= IncreaseMoney;
-            triggerManager.OnBuyingDesk -= BuyArea;
-        }
+        TriggerManager.OnMoneyCollected -= IncreaseMoney;
+        TriggerManager.OnBuyingDesk -= BuyArea;
     }
 
     void BuyArea()
     {
-        if (TriggerManager.Instance.areaToBuy != null)
+        if (TriggerManager.areaToBuy != null)
         {
             if (moneyCount >= 1)
             {
-                TriggerManager.Instance.areaToBuy.Buy(1);
+                TriggerManager.areaToBuy.Buy(1);
                 moneyCount -= 1;
             }
         }

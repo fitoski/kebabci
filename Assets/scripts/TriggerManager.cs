@@ -5,19 +5,19 @@ using UnityEngine;
 public class TriggerManager : MonoBehaviour
 {
     public delegate void OnCollectArea();
-    public event OnCollectArea OnKebabCollect;
-    public KebabManager kebabManager;
+    public static event OnCollectArea OnKebabCollect;
+    public static KebabManager kebabManager;
 
     public delegate void OnDeskArea();
-    public event OnDeskArea OnKebabGive;
-    public WorkerManager workerManager;
+    public static event OnDeskArea OnKebabGive;
+    public static WorkerManager workerManager;
 
     public delegate void OnMoneyArea();
-    public event OnMoneyArea OnMoneyCollected;
+    public static event OnMoneyArea OnMoneyCollected;
 
     public delegate void OnBuyArea();
-    public event OnBuyArea OnBuyingDesk;
-    public BuyArea areaToBuy;
+    public static event OnBuyArea OnBuyingDesk;
+    public static BuyArea areaToBuy;
 
     bool isCollecting, isGiving;
 

@@ -13,21 +13,21 @@ public class CollectManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TriggerManager.Instance.OnKebabCollect += GetKebab;
-        TriggerManager.Instance.OnKebabGive += GiveKebab;
+        TriggerManager.OnKebabCollect += GetKebab;
+        TriggerManager.OnKebabGive += GiveKebab;
 
     }
 
     private void OnDisable()
     {
-        TriggerManager.Instance.OnKebabCollect -= GetKebab;
-        TriggerManager.Instance.OnKebabGive -= GiveKebab;
+        TriggerManager.OnKebabCollect -= GetKebab;
+        TriggerManager.OnKebabGive -= GiveKebab;
 
     }
 
     void GetKebab()
     {
-        if(kebabList.Count<= kebabLimit && TriggerManager.Instance.kebabManager.kebabList.Count > 0)
+        if (kebabList.Count <= kebabLimit)
         {
             GameObject temp = Instantiate(kebabPrefab,collectPoint);
             temp.transform.parent = null;
@@ -35,9 +35,9 @@ public class CollectManager : MonoBehaviour
             temp.transform.parent = collectPoint;
             temp.transform.localPosition = new Vector3(collectPoint.position.x, collectPoint.position.y + (kebabList.Count * kebabSize), collectPoint.position.z);
             kebabList.Add(temp);
-            if(TriggerManager.Instance.kebabManager!=null)
+            if (TriggerManager.kebabManager != null)
             {
-                TriggerManager.Instance.kebabManager.RemoveLast();
+                TriggerManager.kebabManager.RemoveLast();
             }
         }
     }
@@ -46,7 +46,7 @@ public class CollectManager : MonoBehaviour
     {
         if(kebabList.Count>0)
         {
-            TriggerManager.Instance.workerManager.GetKebab();
+            TriggerManager.workerManager.GetKebab();
             RemoveLast();
         }
     }

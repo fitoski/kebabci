@@ -310,6 +310,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &79360768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79360752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520072c6b6649d54a91f3763b4000ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &82243439
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +361,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 136943970358897604, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
+      propertyPath: m_Height
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 136943970358897604, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
+      propertyPath: m_Radius
+      value: 0.31
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93284faca6668724daf397e9639c1bc9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.03
@@ -405,14 +425,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: karakterlerf
       objectReference: {fileID: 0}
-    - target: {fileID: 136943970358897604, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
-      propertyPath: m_Height
-      value: 1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 136943970358897604, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
-      propertyPath: m_Radius
-      value: 0.31
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -438,6 +450,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 93284faca6668724daf397e9639c1bc9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 79360767}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 93284faca6668724daf397e9639c1bc9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 79360768}
     - targetCorrespondingSourceObject: {fileID: 6016174133270374938, guid: 93284faca6668724daf397e9639c1bc9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 434538959}
@@ -1591,9 +1606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520072c6b6649d54a91f3763b4000ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kebabManager: {fileID: 0}
-  workerManager: {fileID: 0}
-  areaToBuy: {fileID: 0}
 --- !u!1 &1926014926
 GameObject:
   m_ObjectHideFlags: 0
