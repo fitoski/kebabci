@@ -6,6 +6,7 @@ public class WorkerManager : MonoBehaviour
 {
     public List<GameObject> kebabList = new List<GameObject>();
     List<GameObject> moneyList = new List<GameObject>();
+    public Transform waiterExitPoint;
 
     public Transform kebabPoint,moneyDropPoint;
     public GameObject kebabPrefab,moneyPrefab;
@@ -13,6 +14,7 @@ public class WorkerManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(GenerateMoney());
+        
     }
 
     IEnumerator GenerateMoney()

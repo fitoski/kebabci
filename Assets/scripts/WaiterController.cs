@@ -8,27 +8,63 @@ public class WaiterController : MonoBehaviour
 {
     public Transform target;
     private NavMeshAgent agent;
+    WaiterState waiterState = WaiterState.GetKebab;
+    private CollectManager collectManager;
 
+    private bool foundDesk = false;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        target = KebabGeneratorManager.Instance.KebabGenerators[0].waiterExitPoint;
+        collectManager = GetComponent<CollectManager>();
     }
 
-    public Transform FindClosestExitPoint()
+    void Update()
+    {
+        if (waiterState == WaiterState.Idle)
+        {
+            target.position = transform.position;
+            foundDesk = false;
+        }
+
+        else if (waiterState == WaiterState.SellKebab)
+        {
+            if (!foundDesk)
+            {
+                target = FindClosestKebabDesk();
+            }
+
+            if (collectManager.kebabList.Count == 0)
+            {
+                waiterState = WaiterState.GetKebab;
+            }
+        }
+
+        else if (waiterState == WaiterState.GetKebab)
+        {
+            target = KebabGeneratorManager.Instance.KebabGenerators[0].waiterExitPoint;
+            foundDesk = false;
+
+            if (collectManager.kebabList.Count >= collectManager.KebabLimit)
+            {
+                waiterState = WaiterState.SellKebab;
+            }
+        }
+
+        agent.SetDestination(new Vector3(target.position.x, transform.position.y, target.position.z));
+    }
+
+    public Transform FindClosestKebabDesk()
     {
         Transform closestExitPoint = null;
         float closestDistance = Mathf.Infinity;
-        List<KebabManager> kebabGenerators = KebabGeneratorManager.Instance.KebabGenerators;
+        List<WorkerManager> kebabDesks = KebabDesksManager.Instance.kebabDesks;
 
-        Vector3 myPositionXZ = new Vector3(transform.position.x, 0f, transform.position.z);
-        foreach (KebabManager kebabManager in kebabGenerators)
+        foreach (WorkerManager deskManager in kebabDesks)
         {
-            Transform waiterExitPoint = kebabManager.waiterExitPoint;
-            Vector3 exitPointXZ = new Vector3(waiterExitPoint.position.x, 0f, waiterExitPoint.position.z);
+            Transform waiterExitPoint = deskManager.waiterExitPoint;
+            Vector3 exitPointXZ = new Vector3(waiterExitPoint.position.x, transform.position.y, waiterExitPoint.position.z);
 
-            float distanceToExitPoint = Vector3.Distance(myPositionXZ, exitPointXZ);
+            float distanceToExitPoint = Vector3.Distance(transform.position, exitPointXZ);
             if (distanceToExitPoint < closestDistance)
             {
                 closestDistance = distanceToExitPoint;
@@ -36,11 +72,14 @@ public class WaiterController : MonoBehaviour
             }
         }
 
+        foundDesk = true;
         return closestExitPoint;
     }
 
-    void Update()
+    enum WaiterState
     {
-        agent.SetDestination(target.position);
+        Idle,
+        GetKebab,
+        SellKebab,
     }
 }

@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
       propertyPath: m_Size.x
-      value: 3.54
+      value: 4.07765
       objectReference: {fileID: 0}
     - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
       propertyPath: m_Size.y
@@ -141,7 +141,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
       propertyPath: m_Size.z
-      value: 2.19
+      value: 4.306065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
+      propertyPath: m_Center.z
+      value: -0.7878597
       objectReference: {fileID: 0}
     - target: {fileID: 2993864140071752806, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
       propertyPath: m_IsTrigger
@@ -204,6 +216,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4821623402750398720, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1413673676}
+    - targetCorrespondingSourceObject: {fileID: 4821623402750398720, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1390557722}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5839060369782139840, guid: 5ff9f985590cd094795d262c89e14e46, type: 3}
       insertIndex: -1
@@ -353,6 +368,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 79360757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &142882339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142882340}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142882340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142882339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6585143, y: 0.12, z: 0.012096397}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &146400757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -417,6 +463,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: karakterlerf
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 919132149155446097, guid: 93284faca6668724daf397e9639c1bc9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+>>>>>>> Stashed changes
     - target: {fileID: 136943970358897604, guid: 16e7451e81164bc4caac73768f16ceb6, type: 3}
       propertyPath: m_Height
       value: 1.27
@@ -822,6 +875,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee987da6efab07d49bc9fc59e287f08b, type: 3}
+--- !u!1 &727185487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 727185488}
+  m_Layer: 0
+  m_Name: CollectPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &727185488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727185487}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 48.93, z: 18.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450653338595853}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &793071387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,7 +1245,11 @@ Transform:
   - {fileID: 1773827220}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1205053503
+=======
+--- !u!1 &1390557721
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1169,20 +1257,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1205053504}
   m_Layer: 0
   m_Name: MoneyDropPoint
+=======
+  - component: {fileID: 1390557722}
+  m_Layer: 0
+  m_Name: ExitPoint
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &1205053504
+=======
+--- !u!4 &1390557722
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1205053503}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1320,6 +1419,16 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1471301591}
+=======
+  m_GameObject: {fileID: 1390557721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.415, z: -1.491}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978626858}
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413673675
 GameObject:
@@ -1952,6 +2061,7 @@ GameObject:
   - component: {fileID: 1860300855}
   - component: {fileID: 1860300854}
   - component: {fileID: 1860300856}
+  - component: {fileID: 1860300857}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1999,6 +2109,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520072c6b6649d54a91f3763b4000ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1860300857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860300853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd023317cffbb24d978fd37e67c60a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kebabDesks: []
 --- !u!1 &1926014926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,6 +2208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kebabList: []
+  waiterExitPoint: {fileID: 1390557722}
   kebabPoint: {fileID: 1570765015}
   moneyDropPoint: {fileID: 1413673676}
   kebabPrefab: {fileID: 5959661674729835722, guid: 9e0e728ad620bf244b89e34930b844b2, type: 3}
@@ -2150,6 +2274,7 @@ Transform:
   m_Children:
   - {fileID: 8879528567111197331}
   - {fileID: 714622013289158381}
+  - {fileID: 727185488}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &642509605055498981
@@ -2368,9 +2493,12 @@ GameObject:
   - component: {fileID: 543450653338595853}
   - component: {fileID: 919132149414832313}
   - component: {fileID: 919132149414832312}
+  - component: {fileID: 919132149414832314}
+  - component: {fileID: 919132149414832315}
+  - component: {fileID: 919132149414832316}
   m_Layer: 0
   m_Name: AI_Waiter
-  m_TagString: Untagged
+  m_TagString: Waiter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2409,7 +2537,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84735238a53833d45a82baf7063b08fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 142882340}
+--- !u!114 &919132149414832314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149414832311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89eff65ab1082ac4588ac2a0f65e5965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kebabList: []
+  kebabPrefab: {fileID: 5959661674729835722, guid: 9e0e728ad620bf244b89e34930b844b2, type: 3}
+  collectPoint: {fileID: 727185488}
+  kebabSize: 5
+--- !u!114 &919132149414832315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149414832311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520072c6b6649d54a91f3763b4000ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &919132149414832316
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149414832311}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!4 &1351161017264211104
 Transform:
   m_ObjectHideFlags: 0
@@ -4020,5 +4203,9 @@ SceneRoots:
   - {fileID: 543450653338595853}
   - {fileID: 1926014928}
   - {fileID: 1860300855}
+<<<<<<< Updated upstream
   - {fileID: 1471301591}
   - {fileID: 967848994}
+=======
+  - {fileID: 142882340}
+>>>>>>> Stashed changes

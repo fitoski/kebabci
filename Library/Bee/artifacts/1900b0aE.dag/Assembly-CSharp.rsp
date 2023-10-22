@@ -380,6 +380,7 @@
 "Assets/scripts/BuyArea.cs"
 "Assets/scripts/BuyManager.cs"
 "Assets/scripts/CollectManager.cs"
+"Assets/scripts/KebabDesksManager.cs"
 "Assets/scripts/KebabGeneratorManager.cs"
 "Assets/scripts/KebabManager.cs"
 "Assets/scripts/TriggerManager.cs"

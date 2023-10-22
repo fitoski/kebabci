@@ -8,6 +8,7 @@ TagManager:
   - WorkArea
   - Money
   - BuyArea
+  - Waiter
   layers:
   - Default
   - TransparentFX

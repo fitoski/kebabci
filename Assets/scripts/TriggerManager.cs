@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class TriggerManager : MonoBehaviour
 {
-    public delegate void OnCollectArea();
-    public static event OnCollectArea OnKebabCollect;
-    public static KebabManager kebabManager;
+    private KebabManager kebabManager;
+    private WorkerManager workerManager;
+    private BuyArea areaToBuy;
 
-    public delegate void OnDeskArea();
-    public static event OnDeskArea OnKebabGive;
-    public static WorkerManager workerManager;
+    private CollectManager collectManager;
 
-    public delegate void OnMoneyArea();
-    public static event OnMoneyArea OnMoneyCollected;
-
-    public delegate void OnBuyArea();
-    public static event OnBuyArea OnBuyingDesk;
-    public static BuyArea areaToBuy;
-
-    bool isCollecting, isGiving;
+    private bool isCollecting, isGiving;
 
     void Start()
     {
+        collectManager = GetComponent<CollectManager>();
         StartCoroutine(CollectEnum());
     }
 
@@ -30,13 +22,19 @@ public class TriggerManager : MonoBehaviour
     {
         while (true)
         {
-            if (isCollecting == true)
+            if (isCollecting)
             {
-                OnKebabCollect();
+                if (kebabManager != null)
+                {
+                    collectManager.GetKebab(kebabManager);
+                }
             }
-            if (isGiving==true)
+            if (isGiving)
             {
-                OnKebabGive();
+                if (workerManager != null)
+                {
+                    collectManager.GiveKebab(workerManager);
+                }
             }
             yield return new WaitForSeconds(0.5f);
         }
@@ -44,9 +42,9 @@ public class TriggerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Money"))
+        if (other.gameObject.CompareTag("Money") && transform.CompareTag("Player"))
         {
-            OnMoneyCollected();
+            GetComponent<BuyManager>().IncreaseMoney();
             Destroy(other.gameObject);
         }
     }
@@ -65,7 +63,6 @@ public class TriggerManager : MonoBehaviour
         }
         if (other.gameObject.CompareTag("BuyArea"))
         {
-            OnBuyingDesk();
             areaToBuy = other.gameObject.GetComponent<BuyArea>();
         }
 
