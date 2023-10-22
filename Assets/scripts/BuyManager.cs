@@ -6,31 +6,19 @@ public class BuyManager : MonoBehaviour
 {
     public int moneyCount = 0;
 
-    private void OnEnable()
+    public void BuyArea(BuyArea areaToBuy)
     {
-        TriggerManager.OnMoneyCollected += IncreaseMoney;
-        TriggerManager.OnBuyingDesk += BuyArea;
-    }
-
-    private void OnDisable()
-    {
-        TriggerManager.OnMoneyCollected -= IncreaseMoney;
-        TriggerManager.OnBuyingDesk -= BuyArea;
-    }
-
-    void BuyArea()
-    {
-        if (TriggerManager.areaToBuy != null)
+        if (areaToBuy != null)
         {
-            if (moneyCount >= 1)
-            {
-                TriggerManager.areaToBuy.Buy(1);
+           if (moneyCount >= 1)
+           {
+                areaToBuy.Buy(1);
                 moneyCount -= 1;
-            }
+           }
         }
     }
 
-    void IncreaseMoney()
+    public void IncreaseMoney()
     {
         moneyCount += 50;
     }

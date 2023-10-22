@@ -27054,8 +27054,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp",
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 2058891,
       "PayloadLength": 37509,
+=======
+      "PayloadOffset": 2106159,
+      "PayloadLength": 37908,
+>>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "-target:library\r\n-out:\"Library",
       "Inputs": [],
       "Outputs": [
@@ -27067,7 +27072,11 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 2096487,
+=======
+      "PayloadOffset": 2144154,
+>>>>>>> Stashed changes
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -27337,6 +27346,7 @@
         "Assets/scripts/BuyArea.cs",
         "Assets/scripts/BuyManager.cs",
         "Assets/scripts/CollectManager.cs",
+        "Assets/scripts/KebabDesksManager.cs",
         "Assets/scripts/KebabGeneratorManager.cs",
         "Assets/scripts/KebabManager.cs",
         "Assets/scripts/TriggerManager.cs",
@@ -27665,8 +27675,13 @@
       "Annotation": "WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
+<<<<<<< Updated upstream
       "PayloadOffset": 2096583,
       "PayloadLength": 10231,
+=======
+      "PayloadOffset": 2144250,
+      "PayloadLength": 10471,
+>>>>>>> Stashed changes
       "PayloadDebugContentSnippet": "Library\\Bee\\artifacts\\mvdfrm\\U",
       "Inputs": [],
       "Outputs": [

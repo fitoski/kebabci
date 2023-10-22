@@ -9,44 +9,28 @@ public class CollectManager : MonoBehaviour
     public Transform collectPoint;
     [SerializeField] private float kebabSize = 5f;
 
-    int kebabLimit = 10;
+    private int kebabLimit = 10;
+    public int KebabLimit => kebabLimit;
 
-    private void OnEnable()
+    public void GetKebab(KebabManager kebabManager)
     {
-        TriggerManager.OnKebabCollect += GetKebab;
-        TriggerManager.OnKebabGive += GiveKebab;
-
-    }
-
-    private void OnDisable()
-    {
-        TriggerManager.OnKebabCollect -= GetKebab;
-        TriggerManager.OnKebabGive -= GiveKebab;
-
-    }
-
-    void GetKebab()
-    {
-        if (kebabList.Count <= kebabLimit)
+        if (kebabList.Count < kebabLimit)
         {
-            GameObject temp = Instantiate(kebabPrefab,collectPoint);
-            temp.transform.parent = null;
-            temp.transform.localScale = new Vector3(1, 1, 1);
-            temp.transform.parent = collectPoint;
-            temp.transform.localPosition = new Vector3(collectPoint.position.x, collectPoint.position.y + (kebabList.Count * kebabSize), collectPoint.position.z);
-            kebabList.Add(temp);
-            if (TriggerManager.kebabManager != null)
-            {
-                TriggerManager.kebabManager.RemoveLast();
-            }
+           GameObject temp = Instantiate(kebabPrefab,collectPoint);
+           temp.transform.parent = null;
+           temp.transform.localScale = new Vector3(1, 1, 1);
+           temp.transform.parent = collectPoint;
+           temp.transform.localPosition = new Vector3(collectPoint.position.x, collectPoint.position.y + (kebabList.Count * kebabSize), collectPoint.position.z);
+           kebabList.Add(temp);
+           kebabManager.RemoveLast();
         }
     }
 
-    void GiveKebab()
+    public void GiveKebab(WorkerManager workerManager)
     {
         if(kebabList.Count>0)
         {
-            TriggerManager.workerManager.GetKebab();
+            workerManager.GetKebab();
             RemoveLast();
         }
     }
